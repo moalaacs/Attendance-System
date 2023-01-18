@@ -1,0 +1,151 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "mohammed",
+      "attend": [
+        {
+          "date": "1/1/2000",
+          "attend": "4",
+          "departure": "1"
+        },
+        {
+          "date": "2/1/2022",
+          "attend": "9.30",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ali",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "9",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "bono",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "8.15",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "omar",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "9.20",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "eslam",
+      "attend": [
+        {
+          "date": "10/1/2022",
+          "attend": "8.30",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "eslam",
+      "attend": [
+        {
+          "date": "10/1/2022",
+          "attend": "11",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "sayed",
+      "attend": [
+        {
+          "date": "10/1/2022",
+          "attend": "9",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "amr",
+      "attend": [
+        {
+          "date": "10/1/2022",
+          "attend": "11",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "amr",
+      "attend": [
+        {
+          "date": "10/1/2022",
+          "attend": "11",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "abas",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "9.45",
+          "departure": "3"
+        }
+      ]
+    },
+    {
+      "name": "hambola",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "9.45",
+          "departure": "3"
+        }
+      ],
+      "id": 312
+    },
+    {
+      "id": 205,
+      "name": "hambola",
+      "attend": [
+        {
+          "date": "1/1/2022",
+          "attend": "9.45",
+          "departure": "3"
+        }
+      ]
+    }
+  ],
+  "clerk": [
+    {
+      "id": 11,
+      "body": "clecrk man",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
