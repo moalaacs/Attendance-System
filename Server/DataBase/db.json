@@ -1,130 +1,274 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "mohammed",
+      "firstname": "Mohammed",
+      "lastname": "Alaa",
+      "address": "7 Oakridge Avenue",
+      "email": "moalaa@org",
+      "dob": "10/1/2000",
+      "verified": "true",
+      "username": "ELJUK82810",
+      "password": "252525",
+      "role": "admin",
       "attend": [
         {
-          "date": "1/1/2000",
-          "attend": "4",
-          "departure": "1"
-        },
-        {
-          "date": "2/1/2022",
-          "attend": "9.30",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 2,
-      "name": "ali",
+      "firstname": "Yousef",
+      "lastname": "Pawley",
+      "address": "12320 Brown Trail",
+      "email": "yousef@org",
+      "dob": "5/20/1989",
+      "verified": "false",
+      "username": "ACQRI68770",
+      "password": "252525",
+      "role": "security",
       "attend": [
         {
-          "date": "1/1/2022",
-          "attend": "9",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 3,
-      "name": "bono",
+      "firstname": "Menna",
+      "lastname": "Postians",
+      "address": "15999 Corscot Road",
+      "email": "menna@org",
+      "dob": "12/16/1989",
+      "verified": "false",
+      "username": "SXJJX53096",
+      "password": "252525",
+      "role": "employee",
       "attend": [
         {
-          "date": "1/1/2022",
-          "attend": "8.15",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 4,
-      "name": "omar",
+      "firstname": "Carmelle",
+      "lastname": "Koopman",
+      "address": "4 Green Pass",
+      "email": "ckoopman3@diigo.com",
+      "dob": "8/2/1989",
+      "verified": "false",
+      "username": "LAZWY82403",
+      "password": "Aigh8UScB46F",
+      "role": "employee",
       "attend": [
         {
-          "date": "1/1/2022",
-          "attend": "9.20",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 11,
-      "name": "eslam",
+      "firstname": "Sybyl",
+      "lastname": "Courteney",
+      "address": "268 Meadow Valley Terrace",
+      "email": "scourteney4@mediafire.com",
+      "dob": "3/28/1992",
+      "verified": "false",
+      "username": "ILRXP81609",
+      "password": "IDS2kx1nbobv",
+      "role": "employee",
       "attend": [
         {
-          "date": "10/1/2022",
-          "attend": "8.30",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 12,
-      "name": "eslam",
+      "firstname": "Yvor",
+      "lastname": "Flounders",
+      "address": "20 Kim Hill",
+      "email": "yflounders5@squarespace.com",
+      "dob": "2/26/1995",
+      "verified": "false",
+      "username": "PKGRK48927",
+      "password": "SnFEFq5TSTS",
+      "role": "employee",
       "attend": [
         {
-          "date": "10/1/2022",
-          "attend": "11",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 15,
-      "name": "sayed",
+      "firstname": "Alan",
+      "lastname": "Dils",
+      "address": "5481 Norway Maple Crossing",
+      "email": "adils6@theatlantic.com",
+      "dob": "12/30/1977",
+      "verified": "false",
+      "username": "KAVWB51561",
+      "password": "hDrzCAapfXD",
+      "role": "employee",
       "attend": [
         {
-          "date": "10/1/2022",
-          "attend": "9",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 7,
-      "name": "amr",
+      "firstname": "Noe",
+      "lastname": "Simchenko",
+      "address": "61 Cottonwood Terrace",
+      "email": "nsimchenko7@unblog.fr",
+      "dob": "12/14/1976",
+      "verified": "false",
+      "username": "MRPKA03917",
+      "password": "xj5XuKfdvYbf",
+      "role": "employee",
       "attend": [
         {
-          "date": "10/1/2022",
-          "attend": "11",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 50,
-      "name": "amr",
+      "firstname": "Jed",
+      "lastname": "Garr",
+      "address": "66546 Westerfield Point",
+      "email": "jgarr8@seattletimes.com",
+      "dob": "7/20/1974",
+      "verified": "false",
+      "username": "TPVEV25830",
+      "password": "vUbMgIflEx5",
+      "role": "employee",
       "attend": [
         {
-          "date": "10/1/2022",
-          "attend": "11",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "id": 51,
-      "name": "abas",
+      "firstname": "Bunni",
+      "lastname": "Mighele",
+      "address": "9 Sheridan Street",
+      "email": "bmighele9@boston.com",
+      "dob": "6/19/1978",
+      "verified": "false",
+      "username": "AANOV62721",
+      "password": "R7Cuc4hc",
+      "role": "employee",
       "attend": [
         {
-          "date": "1/1/2022",
-          "attend": "9.45",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
       ]
     },
     {
-      "name": "hambola",
+      "firstname": "Deny",
+      "lastname": "Empringham",
+      "address": "3753 Dennis Junction",
+      "email": "dempringhama@google.ru",
+      "dob": "8/24/1970",
+      "verified": "false",
+      "username": "SQSBL42117",
+      "password": "Abu9Xi",
+      "role": "employee",
       "attend": [
         {
-          "date": "1/1/2022",
-          "attend": "9.45",
-          "departure": "3"
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
         }
-      ],
-      "id": 312
+      ]
+    },
+    {
+      "firstname": "Merrilee",
+      "lastname": "Courage",
+      "address": "0 Green Avenue",
+      "email": "mcourageb@live.com",
+      "dob": "11/23/1986",
+      "verified": "false",
+      "username": "LNQJV13751",
+      "password": "i1BUWaVMnX1R",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
+        }
+      ]
+    },
+    {
+      "firstname": "Terrie",
+      "lastname": "Crossby",
+      "address": "49 Killdeer Center",
+      "email": "tcrossbyc@blogger.com",
+      "dob": "11/25/1997",
+      "verified": "false",
+      "username": "OJVXW23030",
+      "password": "zSSBgx6",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
+        }
+      ]
+    },
+    {
+      "firstname": "Mikaela",
+      "lastname": "Nunn",
+      "address": "719 Farragut Trail",
+      "email": "mnunnd@networksolutions.com",
+      "dob": "8/4/1976",
+      "verified": "false",
+      "username": "SFYXU81905",
+      "password": "ILqt7lOszI",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
+        }
+      ]
+    },
+    {
+      "firstname": "Cookie",
+      "lastname": "Ladon",
+      "address": "80620 High Crossing Junction",
+      "email": "cladone@amazonaws.com",
+      "dob": "8/22/1985",
+      "verified": "false",
+      "username": "DIMEQ94275",
+      "password": "Kiz4YxZKiep",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": "9",
+          "out": "3"
+        }
+      ]
     },
     {
       "id": 205,
