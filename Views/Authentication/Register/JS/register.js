@@ -1,4 +1,4 @@
-// import { Employee } from "../../../Users/Employee/Employee";
+import { User } from "../../../../Model/User.js";
 
 let firstName = document.querySelector("#first-name");
 let lastName = document.querySelector("#last-name");
@@ -16,12 +16,26 @@ registerButton.addEventListener("click", (e) => {
 
   if (checkUerInput()) {
     console.log("Valid Form");
+    // if (isUserExists()) {
+    //   console.log("User already there");
+    // }
+    // else {
+    //   console.log("This user will be added");
+    // }
+    (async () => {
+      if (await isUserExists()) {
+        alert("User already there, just login");
+      }
+      else {
+        console.log("This user will be added");
+        addNewUser();
+        location.href = "../../../../Views/Authentication/Login/login.html";
+      }
+    })();
   }
   else {
     console.log("Not Valid Form");
   }
-  // checkCredential();
-  // register();
 })
 
 function setValidInput(element) {
@@ -108,3 +122,37 @@ function checkUerInput() {
 
   return valid;
 }
+
+async function isUserExists() {
+  let exist = false;
+  let response = await fetch(`http://localhost:3000/employees`);
+  let users = await response.json();
+  users.filter((user) => {
+    if (user.email == email.value.trim()) {
+      console.log("Exist");
+      // debugger;
+      exist = true;
+      return;
+    }
+  })
+  return exist;
+}
+
+function addNewUser() {
+  let username = "user";
+  let password = "user";
+  let newUser = new User(
+    firstName.value.trim(),
+    lastName.value.trim(),
+    address.value.trim(),
+    email.value.trim(),
+    datepicker.value.trim(),
+    "false",
+    username,
+    password,
+    "employee"
+  );
+  newUser.addUserToDB();
+}
+
+// not valid json
