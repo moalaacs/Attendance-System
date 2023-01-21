@@ -22,6 +22,7 @@ async function checkCredential() {
   else {
     if (user[0].role == "admin") {
       console.log("Admin");
+      location.href = "../../../../Dashboard/index.html"
     }
     else if (user[0].role == "security") {
       console.log("Sec");

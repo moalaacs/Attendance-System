@@ -2,8 +2,8 @@
   "employees": [
     {
       "id": 1,
-      "firstname": "Yousef",
-      "lastname": "Pawley",
+      "firstName": "Yousef",
+      "lastName": "Pawley",
       "address": "12320 Brown Trail",
       "email": "sec@sec.com",
       "dob": "5/20/1989",
@@ -13,16 +13,21 @@
       "role": "security",
       "attend": [
         {
-          "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "date": "1/5/2023",
+          "in": 9,
+          "out": 3
+        },
+        {
+          "date": "21/01/2023",
+          "in": "2:20",
+          "out": "2.32"
         }
       ]
     },
     {
       "id": 2,
-      "firstname": "Mohammed",
-      "lastname": "Alaa",
+      "firstName": "Mohammed",
+      "lastName": "Alaa",
       "address": "7 Oakridge Avenue",
       "email": "mo@admin.com",
       "dob": "10/1/2000",
@@ -33,15 +38,15 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
     {
       "id": 3,
-      "firstname": "Menna",
-      "lastname": "Postians",
+      "firstName": "Menna",
+      "lastName": "Postians",
       "address": "15999 Corscot Road",
       "email": "menna@org.com",
       "dob": "12/16/1989",
@@ -52,15 +57,15 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
     {
       "id": 4,
-      "firstname": "Carmelle",
-      "lastname": "Koopman",
+      "firstName": "Carmelle",
+      "lastName": "Koopman",
       "address": "4 Green Pass",
       "email": "ckoopman3@diigo.com",
       "dob": "8/2/1989",
@@ -71,15 +76,15 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
     {
       "id": 5,
-      "firstname": "Sybyl",
-      "lastname": "Courteney",
+      "firstName": "Sybyl",
+      "lastName": "Courteney",
       "address": "268 Meadow Valley Terrace",
       "email": "scourteney4@mediafire.com",
       "dob": "3/28/1992",
@@ -90,15 +95,15 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
     {
       "id": 6,
-      "firstname": "Yvor",
-      "lastname": "Flounders",
+      "firstName": "Yvor",
+      "lastName": "Flounders",
       "address": "20 Kim Hill",
       "email": "yflounders5@squarespace.com",
       "dob": "2/26/1995",
@@ -109,15 +114,15 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
     {
       "id": 7,
-      "firstname": "Cookie",
-      "lastname": "Ladon",
+      "firstName": "Cookie",
+      "lastName": "Ladon",
       "address": "80620 High Crossing Junction",
       "email": "cladone@amazonaws.com",
       "dob": "8/22/1985",
@@ -128,8 +133,8 @@
       "attend": [
         {
           "date": "1/1/2023",
-          "in": "9",
-          "out": "3"
+          "in": 9,
+          "out": 3
         }
       ]
     },
