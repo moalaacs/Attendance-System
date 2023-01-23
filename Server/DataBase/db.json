@@ -148,7 +148,14 @@
       "verified": "false",
       "username": "user",
       "password": "user",
-      "role": "employee"
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": 9,
+          "out": 3
+        }
+      ]
     },
     {
       "id": 9,
@@ -160,7 +167,25 @@
       "verified": "false",
       "username": "user",
       "password": "user",
-      "role": "employee"
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/1/2023",
+          "in": 9,
+          "out": 3
+        },
+        {
+          "date": "22/01/2023",
+          "absence": false,
+          "in": "9:00"
+        },
+        {
+          "date": "23/01/2023",
+          "absence": false,
+          "in": "9:15",
+          "out": "18:38"
+        }
+      ]
     },
     {
       "id": 10,
@@ -172,17 +197,22 @@
       "verified": "false",
       "username": "user",
       "password": "user",
-      "role": "employee"
+      "role": "employee",
+      "attend": [
+        {
+          "date": "22/01/2023",
+          "absence": false,
+          "in": "18:56",
+          "late": 0,
+          "out": "18:58"
+        },
+        {
+          "date": "23/01/2023",
+          "absence": false,
+          "in": "9:22",
+          "late": "1:-8"
+        }
+      ]
     }
-  ],
-  "clerk": [
-    {
-      "id": 11,
-      "body": "clecrk man",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

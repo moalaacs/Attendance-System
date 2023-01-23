@@ -11,24 +11,23 @@ loginForm.addEventListener("submit", (e) => {
   if (validEmail && validPassword) {
     checkCredential();
   }
-})
+});
 
 async function checkCredential() {
-  let response = await fetch(`http://localhost:3000/employees?email=${loginEmail.value}&&password=${loginPassword.value}`);
+  let response = await fetch(
+    `http://localhost:3000/employees?email=${loginEmail.value}&&password=${loginPassword.value}`
+  );
   let user = await response.json();
   if (user.length == 0) {
     console.log("Wrong email or password");
-  }
-  else {
+  } else {
     if (user[0].role == "admin") {
       console.log("Admin");
-      location.href = "../../../../Dashboard/index.html"
-    }
-    else if (user[0].role == "security") {
+      location.href = "../../../../Dashboard/dashboard.html";
+    } else if (user[0].role == "security") {
       console.log("Sec");
       location.href = "../../../../Views/Users/Security/attend.html";
-    }
-    else if (user[0].role == "employee") {
+    } else if (user[0].role == "employee") {
       console.log("Emp");
     }
   }
