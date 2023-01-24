@@ -23,11 +23,12 @@ async function checkCredential() {
   } else {
     if (user[0].role == "admin") {
       console.log("Admin");
-      location.href = "../../../../Dashboard/dashboard.html";
+      location.href = "../../../../Views/Users/Admin/Dashboard/dashboard.html";
     } else if (user[0].role == "security") {
       console.log("Sec");
       location.href = "../../../../Views/Users/Security/attend.html";
     } else if (user[0].role == "employee") {
+      location.href = "../../../Users/Employee/Profile/profile.html";
       console.log("Emp");
     }
   }

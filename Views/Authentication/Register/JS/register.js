@@ -3,6 +3,7 @@ import { User } from "../../../../Model/User.js";
 let firstName = document.querySelector("#first-name");
 let lastName = document.querySelector("#last-name");
 let email = document.querySelector("#email");
+let password = document.querySelector("#password");
 let address = document.querySelector("#address");
 let dob = document.querySelector("#datepicker");
 let registerButton = document.querySelector("#register-btn");
@@ -25,18 +26,16 @@ registerButton.addEventListener("click", (e) => {
     (async () => {
       if (await isUserExists()) {
         alert("User already there, just login");
-      }
-      else {
+      } else {
         console.log("This user will be added");
         addNewUser();
         location.href = "../../../../Views/Authentication/Login/login.html";
       }
     })();
-  }
-  else {
+  } else {
     console.log("Not Valid Form");
   }
-})
+});
 
 function setValidInput(element) {
   element.style.border = "2px solid green";
@@ -54,14 +53,11 @@ function checkUerInput() {
     if (firstName.value.match(/^[A-Za-z]+$/)) {
       setValidInput(firstName);
       // debugger;
-
-    }
-    else {
+    } else {
       setInvalidInput(firstName);
       valid = false;
     }
-  }
-  else {
+  } else {
     setInvalidInput(firstName);
     valid = false;
   }
@@ -70,13 +66,11 @@ function checkUerInput() {
   if (lastName.value.trim() != "") {
     if (lastName.value.match(/^[A-Za-z]+$/)) {
       setValidInput(lastName);
-    }
-    else {
+    } else {
       setInvalidInput(lastName);
       valid = false;
     }
-  }
-  else {
+  } else {
     setInvalidInput(lastName);
     valid = false;
   }
@@ -85,28 +79,42 @@ function checkUerInput() {
   if (email.value.trim() != "") {
     if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
       setValidInput(email);
-    }
-    else {
+    } else {
       setInvalidInput(email);
       valid = false;
     }
-  }
-  else {
+  } else {
     setInvalidInput(email);
     valid = false;
   }
 
-  //address 
+  //password
+
+  if (password.value.trim() != "") {
+    if (
+      password.value.match(
+        /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/
+      )
+    ) {
+      setValidInput(password);
+    } else {
+      setInvalidInput(password);
+      valid = false;
+    }
+  } else {
+    setInvalidInput(password);
+    valid = false;
+  }
+
+  //address
   if (address.value.trim() != "") {
     if (address.value.match(/^[A-Za-z]+$/)) {
       setValidInput(address);
-    }
-    else {
+    } else {
       setInvalidInput(address);
       valid = false;
     }
-  }
-  else {
+  } else {
     setInvalidInput(address);
     valid = false;
   }
@@ -114,8 +122,7 @@ function checkUerInput() {
   //dob
   if (dob.value.trim() != "") {
     setValidInput(dob);
-  }
-  else {
+  } else {
     setInvalidInput(dob);
     valid = false;
   }
@@ -125,7 +132,7 @@ function checkUerInput() {
 
 async function isUserExists() {
   let exist = false;
-  let response = await fetch(`http://localhost:3000/employees`);
+  let response = await fetch(`http://localhost:3000/pending`);
   let users = await response.json();
   users.filter((user) => {
     if (user.email == email.value.trim()) {
@@ -134,23 +141,18 @@ async function isUserExists() {
       exist = true;
       return;
     }
-  })
+  });
   return exist;
 }
 
 function addNewUser() {
-  let username = "user";
-  let password = "user";
   let newUser = new User(
     firstName.value.trim(),
     lastName.value.trim(),
     address.value.trim(),
     email.value.trim(),
-    datepicker.value.trim(),
-    "false",
-    username,
-    password,
-    "employee"
+    password.value.trim(),
+    datepicker.value.trim()
   );
   newUser.addUserToDB();
 }

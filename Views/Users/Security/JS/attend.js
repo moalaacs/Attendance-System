@@ -59,10 +59,10 @@ async function updateUserAttendance() {
       let lateMinutes = currentDate.getMinutes() - startedDate.getMinutes();
       if (lateHours < 0) {
         late = "0:0";
-      } else if (lateHours < 0 && lateMinutes < 0) {
+      } else if (lateHours <= 0 && lateMinutes < 0) {
         late = "0:0";
       } else {
-        late = `${lateHours}:${lateMinutes}`;
+        late = `${lateHours}:${Math.abs(lateMinutes)}`;
       }
 
       if (attendArray.length == 0 || attendArray[lastDay]["date"] != dateNow) {

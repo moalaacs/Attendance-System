@@ -8,19 +8,15 @@
       "email": "sec@sec.com",
       "dob": "5/20/1989",
       "verified": "false",
-      "username": "ACQRI68770",
       "password": "security",
       "role": "security",
       "attend": [
         {
-          "date": "1/5/2023",
-          "in": 9,
-          "out": 3
-        },
-        {
-          "date": "21/01/2023",
-          "in": "2:20",
-          "out": "2.32"
+          "date": "24/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
         }
       ]
     },
@@ -29,190 +25,84 @@
       "firstName": "Mohammed",
       "lastName": "Alaa",
       "address": "7 Oakridge Avenue",
-      "email": "mo@admin.com",
-      "dob": "10/1/2000",
-      "verified": "true",
-      "username": "ELJUK82810",
+      "email": "admin@admin.com",
       "password": "admin",
+      "dob": "10/1/2000",
       "role": "admin",
       "attend": [
         {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
+          "date": "24/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:5",
+          "out": "15:00"
         }
       ]
     },
     {
       "id": 3,
-      "firstName": "Menna",
-      "lastName": "Postians",
-      "address": "15999 Corscot Road",
-      "email": "menna@org.com",
-      "dob": "12/16/1989",
-      "verified": "false",
-      "username": "SXJJX53096",
-      "password": "252525",
+      "firstName": "Khaled",
+      "lastName": "Ali",
+      "address": "Mansoura",
+      "email": "khaled@gamil.com",
+      "password": "LdafV!dYEf^NXk9Z",
+      "dob": "01/15/2000",
       "role": "employee",
       "attend": [
         {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
+          "date": "22/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:5",
+          "out": "15:00"
         }
       ]
     },
     {
       "id": 4,
-      "firstName": "Carmelle",
-      "lastName": "Koopman",
-      "address": "4 Green Pass",
-      "email": "ckoopman3@diigo.com",
-      "dob": "8/2/1989",
-      "verified": "false",
-      "username": "LAZWY82403",
-      "password": "Aigh8UScB46F",
+      "firstName": "Mohammed",
+      "lastName": "Ali",
+      "address": "Mansoura",
+      "email": "moali@gamil.com",
+      "password": "LdafV!dYEf^NXk9Z",
+      "dob": "01/15/2000",
       "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "firstName": "Sybyl",
-      "lastName": "Courteney",
-      "address": "268 Meadow Valley Terrace",
-      "email": "scourteney4@mediafire.com",
-      "dob": "3/28/1992",
-      "verified": "false",
-      "username": "ILRXP81609",
-      "password": "IDS2kx1nbobv",
-      "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        }
-      ]
-    },
+      "attend": []
+    }
+  ],
+  "pending": [
     {
       "id": 6,
-      "firstName": "Yvor",
-      "lastName": "Flounders",
-      "address": "20 Kim Hill",
-      "email": "yflounders5@squarespace.com",
-      "dob": "2/26/1995",
-      "verified": "false",
-      "username": "PKGRK48927",
-      "password": "SnFEFq5TSTS",
+      "firstName": "Mohammed",
+      "lastName": "Emad",
+      "address": "Mansoura",
+      "email": "zoee1ff@meo.com",
+      "password": "hkF3H!j9yf&RAWj2",
+      "dob": "01/09/2023",
       "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        }
-      ]
+      "attend": []
     },
     {
       "id": 7,
-      "firstName": "Cookie",
-      "lastName": "Ladon",
-      "address": "80620 High Crossing Junction",
-      "email": "cladone@amazonaws.com",
-      "dob": "8/22/1985",
-      "verified": "false",
-      "username": "DIMEQ94275",
-      "password": "Kiz4YxZKiep",
+      "firstName": "Hambola",
+      "lastName": "Alaa",
+      "address": "teaijfa",
+      "email": "hambola3@gmail.com",
+      "password": "Ec$4cN$MMb2kmpgv",
+      "dob": "01/08/2023",
       "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        }
-      ]
+      "attend": []
     },
     {
       "id": 8,
-      "firstName": "Mohammed",
-      "lastName": "Emad",
-      "address": "MitGhamr",
-      "email": "emad@user.com",
-      "dob": "01/10/2023",
-      "verified": "false",
-      "username": "user",
-      "password": "user",
-      "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "firstName": "Ahmed",
-      "lastName": "Taha",
-      "address": "Mansoura",
-      "email": "taha@user.com",
-      "dob": "01/01/2023",
-      "verified": "false",
-      "username": "user",
-      "password": "user",
-      "role": "employee",
-      "attend": [
-        {
-          "date": "1/1/2023",
-          "in": 9,
-          "out": 3
-        },
-        {
-          "date": "22/01/2023",
-          "absence": false,
-          "in": "9:00"
-        },
-        {
-          "date": "23/01/2023",
-          "absence": false,
-          "in": "9:15",
-          "out": "18:38"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "firstName": "Ahmed",
+      "firstName": "Hambola",
       "lastName": "Alaa",
-      "address": "Mansoura",
-      "email": "mo1@mo.com",
-      "dob": "01/17/2023",
-      "verified": "false",
-      "username": "user",
-      "password": "user",
+      "address": "fff",
+      "email": "hambola1@gmail.com",
+      "password": "Ec$4cN$MMb2kmpgv",
+      "dob": "01/07/2023",
       "role": "employee",
-      "attend": [
-        {
-          "date": "22/01/2023",
-          "absence": false,
-          "in": "18:56",
-          "late": 0,
-          "out": "18:58"
-        },
-        {
-          "date": "23/01/2023",
-          "absence": false,
-          "in": "9:22",
-          "late": "1:-8"
-        }
-      ]
+      "attend": []
     }
   ]
 }
