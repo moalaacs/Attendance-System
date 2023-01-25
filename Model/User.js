@@ -31,7 +31,15 @@ export class User {
   }
 
   addUserToDB() {
-    fetch("http://localhost:3000/employees", {
+    let currentDate = new Date();
+    let dateNow =
+      currentDate.getMonth() +
+      1 +'/'
+      currentDate.getDate() +
+      
+      "/" +
+      currentDate.getFullYear();
+    fetch("http://localhost:3000/pending", {
       method: "POST",
       body: JSON.stringify({
         id: "",
@@ -42,7 +50,7 @@ export class User {
         password: this.password,
         dob: this.dob,
         role: this.role,
-        attend: [],
+        attend: [{ date: dateNow }],
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

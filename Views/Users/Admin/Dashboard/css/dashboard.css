@@ -1,0 +1,25 @@
+:root {
+  --blue: #4081B3;
+  --indigo: #2c4964;
+  --gold: #FEC644;
+  --gray: #f1f7fd;
+  --aqua: #44A8CB;
+  --light-teal: #59d0d033;
+  --color-light: #e5e7eb;
+}
+
+#sidenavAccordion > div.sb-sidenav-menu,
+body > nav {
+  color: white;
+  background: var(--indigo); 
+}
+
+#tbody {
+  font-size: 25px;
+  font-weight: 500;
+  background-color: antiquewhite;
+}
+#datatable {
+  text-align: left;
+}
+

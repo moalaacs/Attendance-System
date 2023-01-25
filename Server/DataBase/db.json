@@ -12,7 +12,7 @@
       "role": "security",
       "attend": [
         {
-          "date": "24/01/2023",
+          "date": "1/20/2023",
           "absence": false,
           "in": "8:25",
           "late": "0:0",
@@ -31,11 +31,22 @@
       "role": "admin",
       "attend": [
         {
-          "date": "24/01/2023",
+          "date": "20/01/2023",
           "absence": false,
           "in": "8:25",
           "late": "0:5",
           "out": "15:00"
+        },
+        {
+          "date": "21/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:5",
+          "out": "15:00"
+        },
+        {
+          "date": "22/01/2023",
+          "absence": true
         }
       ]
     },
@@ -45,15 +56,22 @@
       "lastName": "Ali",
       "address": "Mansoura",
       "email": "khaled@gamil.com",
-      "password": "LdafV!dYEf^NXk9Z",
+      "password": "LdafV!dYEf^NXk9Z#",
       "dob": "01/15/2000",
       "role": "employee",
       "attend": [
         {
-          "date": "22/01/2023",
+          "date": "21/01/2023",
           "absence": false,
           "in": "8:25",
           "late": "0:5",
+          "out": "15:00"
+        },
+        {
+          "date": "22/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
           "out": "15:00"
         }
       ]
@@ -64,10 +82,55 @@
       "lastName": "Ali",
       "address": "Mansoura",
       "email": "moali@gamil.com",
-      "password": "LdafV!dYEf^NXk9Z",
+      "password": "LdafVf88",
       "dob": "01/15/2000",
       "role": "employee",
-      "attend": []
+      "attend": [
+        {
+          "date": "1/22/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
+        },
+        {
+          "date": "1/23/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "firstName": "Hambola",
+      "lastName": "Hamsola",
+      "address": "Mansoura",
+      "email": "hambola@yahoo.com",
+      "password": "ha^mB*o!la",
+      "dob": "01/03/2023",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/25/2023"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "firstName": "f",
+      "lastName": "fff",
+      "address": "fffffff",
+      "email": "f@f.com",
+      "password": "7wb%35*i7&sH5*%V",
+      "dob": "01/09/2023",
+      "role": "security",
+      "attend": [
+        {
+          "date": "1/26/2023"
+        }
+      ]
     }
   ],
   "pending": [
@@ -80,7 +143,15 @@
       "password": "hkF3H!j9yf&RAWj2",
       "dob": "01/09/2023",
       "role": "employee",
-      "attend": []
+      "attend": [
+        {
+          "date": "24/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
+        }
+      ]
     },
     {
       "id": 7,
@@ -88,10 +159,18 @@
       "lastName": "Alaa",
       "address": "teaijfa",
       "email": "hambola3@gmail.com",
-      "password": "Ec$4cN$MMb2kmpgv",
+      "password": "hambola",
       "dob": "01/08/2023",
       "role": "employee",
-      "attend": []
+      "attend": [
+        {
+          "date": "24/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
+        }
+      ]
     },
     {
       "id": 8,
@@ -102,7 +181,30 @@
       "password": "Ec$4cN$MMb2kmpgv",
       "dob": "01/07/2023",
       "role": "employee",
-      "attend": []
+      "attend": [
+        {
+          "date": "24/01/2023",
+          "absence": false,
+          "in": "8:25",
+          "late": "0:0",
+          "out": "15:00"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "firstName": "Hamsola",
+      "lastName": "Hamsola",
+      "address": "MitGhamr",
+      "email": "Hamsola@gmail.com",
+      "password": "vhaJ$c5&4zGkb#aN",
+      "dob": "01/02/2023",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "24/01/2023"
+        }
+      ]
     }
   ]
 }

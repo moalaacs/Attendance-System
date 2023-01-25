@@ -1,4 +1,6 @@
-import { User } from "../../../../Model/User.js";
+// import { User } from "../../../../../Model/User";
+
+import { User } from "../../../../Authentication/../../Model/User.js";
 
 let firstName = document.querySelector("#first-name");
 let lastName = document.querySelector("#last-name");
@@ -6,6 +8,7 @@ let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let address = document.querySelector("#address");
 let dob = document.querySelector("#datepicker");
+let role = document.querySelector("#role");
 let registerButton = document.querySelector("#register-btn");
 
 $(function () {
@@ -29,7 +32,7 @@ registerButton.addEventListener("click", (e) => {
       } else {
         console.log("This user will be added");
         addNewUser();
-        location.href = "../../../../Views/Authentication/Login/login.html";
+        // location.href = "../../../../Views/Authentication/Login/login.html";
       }
     })();
   } else {
@@ -93,7 +96,7 @@ function checkUerInput() {
   if (password.value.trim() != "") {
     if (
       password.value.match(
-        /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!^*])/
+        /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/
       )
     ) {
       setValidInput(password);
@@ -137,6 +140,7 @@ async function isUserExists() {
   users.filter((user) => {
     if (user.email == email.value.trim()) {
       console.log("Exist");
+      // debugger;
       exist = true;
       return;
     }
@@ -152,7 +156,7 @@ function addNewUser() {
     email.value.trim(),
     password.value.trim(),
     datepicker.value.trim(),
-    "employee"
+    role.value.trim()
   );
   newUser.addUserToDB();
 }

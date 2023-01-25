@@ -10,7 +10,7 @@
   <title>Dashboard</title>
 
   <link href="css/styles.css" rel="stylesheet" />
-  <link href="css/customCSS.css" rel="stylesheet" />
+  <link href="css/dashboard.css" rel="stylesheet" />
   <script>
     src = "https://use.fontawesome.com/releases/v6.1.0/js/all.js"
     crossorigin = "anonymous"
@@ -105,15 +105,22 @@
               </ul>
             </div>
             <div class="card-body">
-              <div id="getbymail">
+              <div id="email-search">
                 <label for="validationCustomUsername" class="form-label">search for employee</label>
                 <div class="input-group has-validation">
 
-                  <input type="email" class="form-control rounded-pill border-primary" id="email"
+                  <input type="email" class="form-control rounded-pill border-primary" id="email-search2"
                     aria-describedby="inputGroupPrepend" required placeholder="Email">
                   <a class="ml-3" onclick="lateReport()"> <i class="fa-solid fa-magnifying-glass fs-3"></i></a>
                 </div>
               </div>
+            </div>
+            <div id="DateRange">
+              <label>start Date</label>
+              <input type="date" id="startDate" class="text-success mb-2 mr-3" required />
+              <label class="ml-3"> End Date</label>
+              <input type="date" id="endDate" class="text-danger" required />
+              <button onclick="getReportsByrange()">search by range</button>
             </div>
             <div class="card-body">
               <table id="datatable" class="display responsive nowrap" style="width:100%">

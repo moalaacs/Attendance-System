@@ -4,6 +4,11 @@ let empInfoBtn = document.querySelector(".emp-info-btn");
 let dailyReportBtn = document.querySelector(".daily-report-btn");
 let lateReportBtn = document.querySelector(".late-report-btn");
 let customReport = document.querySelector(".custom-report-btn");
+let emailSearch = document.querySelector("#email-search");
+
+let dateGroup = document.getElementById("DateRange");
+let starDate = document.getElementById("startDate");
+let endDate = document.getElementById("endDate");
 
 let allEmployees;
 
@@ -16,6 +21,8 @@ let getAllEmployees = async () => {
 window.addEventListener("load", async (e) => {
   await getAllEmployees();
 
+  dateGroup.style.display = "none";
+  emailSearch.style.display = "none";
   empInfoBtn.addEventListener("click", () => {
     if ($.fn.dataTable.isDataTable("#datatable")) {
       $("#datatable").DataTable().clear().destroy();
@@ -43,9 +50,14 @@ window.addEventListener("load", async (e) => {
     tbody.innerHTML = "";
     lateReport();
   });
+
+  customReport.addEventListener("click", dateRangedisplay);
 });
 
 function employeeInfo() {
+  dateGroup.style.display = "none";
+  emailSearch.style.display = "none";
+
   allEmployees.forEach((user) => {
     let tr = document.createElement("tr");
     let firstName = document.createElement("td");
@@ -75,6 +87,8 @@ function employeeInfo() {
 }
 
 function dailyReport() {
+  dateGroup.style.display = "none";
+  emailSearch.style.display = "none";
   let date = new Date();
   let dateNow =
     date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
@@ -127,15 +141,17 @@ function dailyReport() {
 }
 
 function lateReport() {
+  dateGroup.style.display = "none";
+  emailSearch.style.display = "block";
+
   if ($.fn.dataTable.isDataTable("#datatable")) {
     $("#datatable").DataTable().clear().destroy();
   }
 
   tbody.innerHTML = "";
   let headers =
-    "<tr><td>Date</td><td>checked in</td><td>check out</td><td>late</td><td>absence</td></tr>";
+    "<tr><td>Date</td><td>Checked In</td><td>Check Out</td><td>Late</td><td>Absence</td></tr>";
   thead.innerHTML = headers;
-
 
   // let userInput = document.getElementById("email").value="mo1@mo.com";
   // userInput = document.getElementById("email").value;
@@ -180,4 +196,70 @@ function lateReport() {
     tbody.appendChild(tr);
   });
   $("#datatable").DataTable();
+}
+
+function dateRangedisplay() {
+  dateGroup.style.display = "block";
+  emailSearch.style.display = "none";
+  tbody.innerHTML = " ";
+}
+
+function getReportsByrange() {
+  tbody.innerHTML = "";
+  if ($.fn.dataTable.isDataTable("#datatablesSimple")) {
+    $("#datatablesSimple").DataTable().clear().destroy();
+  }
+
+  let start = new Date(starDate.value);
+  let end = new Date(endDate.value);
+
+  let headers =
+    "<tr><td>Date</td><td>checked in</td><td>check out</td><td>late</td></tr>";
+  thead.innerHTML = headers;
+  if (starDate != "") {
+    if (end != "") {
+      allEmployees.forEach((emp) => {
+        let tr = document.createElement("tr");
+        let name = document.createElement("td");
+        name.colSpan = "4";
+        name.innerText = emp.firstName;
+        emp_attendence = emp.attend;
+        let myfilterdRange = emp_attendence.filter((item) => {
+          return (
+            new Date(item.date) >= new Date(start) &&
+            new Date(item.date) <= new Date(end)
+          );
+        });
+
+        if (myfilterdRange.length != 0) {
+          tr.appendChild(name);
+          tr.style.backgroundColor = "SeaGreen";
+          tr.style.color = "white";
+          tbody.appendChild(tr);
+
+          myfilterdRange.forEach((item) => {
+            let tr2 = document.createElement("tr");
+            let date = document.createElement("td");
+            let checkin = document.createElement("td");
+            let checkout = document.createElement("td");
+            let late = document.createElement("td");
+
+            date.innerText = item.date;
+            checkin.innerText = item.in;
+            checkout.innerText = item.out;
+            late.innerText = item.late;
+
+            tr2.appendChild(date);
+            tr2.appendChild(checkin);
+            tr2.appendChild(checkout);
+            tr2.appendChild(late);
+            tbody.appendChild(tr2);
+          });
+        }
+      });
+    } else {
+      // start from range end rage is date today
+    }
+  }
+  // $('#datatablesSimple').DataTable()
 }
