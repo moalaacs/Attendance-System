@@ -5,7 +5,7 @@ let dailyReportBtn = document.querySelector(".daily-report-btn");
 let lateReportBtn = document.querySelector(".late-report-btn");
 let customReport = document.querySelector(".custom-report-btn");
 let emailSearch = document.querySelector("#email-search");
-
+let inputHide = document.querySelector("#hide-input");
 let dateGroup = document.getElementById("DateRange");
 let starDate = document.getElementById("startDate");
 let endDate = document.getElementById("endDate");
@@ -22,7 +22,7 @@ window.addEventListener("load", async (e) => {
   await getAllEmployees();
 
   dateGroup.style.display = "none";
-  emailSearch.style.display = "none";
+  inputHide.style.display = "none";
   empInfoBtn.addEventListener("click", () => {
     if ($.fn.dataTable.isDataTable("#datatable")) {
       $("#datatable").DataTable().clear().destroy();
@@ -51,12 +51,12 @@ window.addEventListener("load", async (e) => {
     lateReport();
   });
 
-  customReport.addEventListener("click", dateRangedisplay);
+  customReport.addEventListener("click", displayDateInput);
 });
 
 function employeeInfo() {
   dateGroup.style.display = "none";
-  emailSearch.style.display = "none";
+  inputHide.style.display = "none";
 
   allEmployees.forEach((user) => {
     let tr = document.createElement("tr");
@@ -88,10 +88,15 @@ function employeeInfo() {
 
 function dailyReport() {
   dateGroup.style.display = "none";
-  emailSearch.style.display = "none";
-  let date = new Date();
+  inputHide.style.display = "none";
+  let currentDate = new Date();
   let dateNow =
-    date.getDate() + "/" + date.getMonth() + 1 + "/" + date.getFullYear();
+    currentDate.getMonth() +
+    1 +
+    "/" +
+    currentDate.getDate() +
+    "/" +
+    currentDate.getFullYear();
 
   allEmployees.forEach((emp) => {
     let lastDay = emp.attend.length - 1;
@@ -121,18 +126,18 @@ function dailyReport() {
         tr.appendChild(checkOut);
         tr.appendChild(late);
         tr.appendChild(absence);
+      } else {
+        let empty = "❌";
+        checkIn.innerText = empty;
+        checkOut.innerText = empty;
+        late.innerText = empty;
+        absence.innerText = "Absent";
+        tr.style.backgroundColor = "#FD8A8A";
+        tr.appendChild(checkIn);
+        tr.appendChild(checkOut);
+        tr.appendChild(late);
+        tr.appendChild(absence);
       }
-    } else {
-      let empty = "❌";
-      checkIn.innerText = empty;
-      checkOut.innerText = empty;
-      late.innerText = empty;
-      absence.innerText = "Absent";
-      tr.style.backgroundColor = "#FD8A8A";
-      tr.appendChild(checkIn);
-      tr.appendChild(checkOut);
-      tr.appendChild(late);
-      tr.appendChild(absence);
     }
     tbody.appendChild(tr);
   });
@@ -142,44 +147,37 @@ function dailyReport() {
 
 function lateReport() {
   dateGroup.style.display = "none";
-  emailSearch.style.display = "block";
+  inputHide.style.display = "block";
 
   if ($.fn.dataTable.isDataTable("#datatable")) {
     $("#datatable").DataTable().clear().destroy();
   }
 
   tbody.innerHTML = "";
-  let headers =
+  thead.innerHTML =
     "<tr><td>Date</td><td>Checked In</td><td>Check Out</td><td>Late</td><td>Absence</td></tr>";
-  thead.innerHTML = headers;
-
-  // let userInput = document.getElementById("email").value="mo1@mo.com";
-  // userInput = document.getElementById("email").value;
-  let userInput = document.getElementById("email").value;
+  emailSearch = document.querySelector("#email-search");
+  userInput = emailSearch.value;
 
   let targetEmp = allEmployees.filter((emp) => {
     return emp.email == userInput;
   });
   console.log(targetEmp);
-  // debugger;
   let empAttend = targetEmp[0].attend;
 
   empAttend.forEach((day) => {
     let tr = document.createElement("tr");
-    // let name = document.createElement("td");
-    // let position = document.createElement("td");
     let date = document.createElement("td");
     let checkIn = document.createElement("td");
     let checkOut = document.createElement("td");
     let late = document.createElement("td");
     let absence = document.createElement("td");
     if (day["absence"] != false) {
-      let empty = '<i class="fa-solid fa-circle-user text-danger fs-3"></i>';
       date.innerText = day["date"];
       checkIn.innerText = "❌";
       checkOut.innerText = "❌";
       late.innerText = "❌";
-      absence.innerHTML = empty;
+      absence.innerHTML = "❌";
     } else {
       date.innerText = day["date"];
       checkIn.innerText = day["in"];
@@ -198,68 +196,70 @@ function lateReport() {
   $("#datatable").DataTable();
 }
 
-function dateRangedisplay() {
+function displayDateInput() {
   dateGroup.style.display = "block";
-  emailSearch.style.display = "none";
+  inputHide.style.display = "none";
   tbody.innerHTML = " ";
 }
 
-function getReportsByrange() {
+function rangeReport() {
   tbody.innerHTML = "";
-  if ($.fn.dataTable.isDataTable("#datatablesSimple")) {
-    $("#datatablesSimple").DataTable().clear().destroy();
+  if ($.fn.dataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable().clear().destroy();
   }
 
   let start = new Date(starDate.value);
   let end = new Date(endDate.value);
 
-  let headers =
-    "<tr><td>Date</td><td>checked in</td><td>check out</td><td>late</td></tr>";
-  thead.innerHTML = headers;
+  thead.innerHTML =
+    "<tr><td>Date</td><td>Check In</td><td>Check Out</td><td>Late</td></tr>";
   if (starDate != "") {
     if (end != "") {
       allEmployees.forEach((emp) => {
         let tr = document.createElement("tr");
         let name = document.createElement("td");
-        name.colSpan = "4";
-        name.innerText = emp.firstName;
-        emp_attendence = emp.attend;
-        let myfilterdRange = emp_attendence.filter((item) => {
+        name.innerText = `${emp.firstName} ${emp.lastName}`;
+        attendance = emp.attend;
+        let returnedRange = attendance.filter((item) => {
           return (
             new Date(item.date) >= new Date(start) &&
             new Date(item.date) <= new Date(end)
           );
         });
 
-        if (myfilterdRange.length != 0) {
+        if (returnedRange.length != 0) {
           tr.appendChild(name);
-          tr.style.backgroundColor = "SeaGreen";
-          tr.style.color = "white";
+          tr.style.backgroundColor = "#f1f7fd";
+          tr.style.color = "black";
           tbody.appendChild(tr);
 
-          myfilterdRange.forEach((item) => {
-            let tr2 = document.createElement("tr");
+          returnedRange.forEach((day) => {
+            let dataTr = document.createElement("tr");
             let date = document.createElement("td");
-            let checkin = document.createElement("td");
-            let checkout = document.createElement("td");
+            let checkIn = document.createElement("td");
+            let checkOut = document.createElement("td");
             let late = document.createElement("td");
 
-            date.innerText = item.date;
-            checkin.innerText = item.in;
-            checkout.innerText = item.out;
-            late.innerText = item.late;
+            if (day.in == "undefined") {
+              date.innerText = "❌";
+              checkIn.innerText = "❌";
+              checkOut.innerText = "❌";
+              late.innerText = "❌";
+            } else {
+              date.innerText = day.date;
+              checkIn.innerText = day.in;
+              checkOut.innerText = day.out;
+              late.innerText = day.late;
+            }
 
-            tr2.appendChild(date);
-            tr2.appendChild(checkin);
-            tr2.appendChild(checkout);
-            tr2.appendChild(late);
-            tbody.appendChild(tr2);
+            dataTr.appendChild(date);
+            dataTr.appendChild(checkIn);
+            dataTr.appendChild(checkOut);
+            dataTr.appendChild(late);
+            tbody.appendChild(dataTr);
           });
         }
       });
-    } else {
-      // start from range end rage is date today
     }
   }
-  // $('#datatablesSimple').DataTable()
 }

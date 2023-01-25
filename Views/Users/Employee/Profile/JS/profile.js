@@ -28,8 +28,8 @@ let thead = document.querySelector("#table_headers");
 })();
 
 function setEmpReports() {
-  if ($.fn.dataTable.isDataTable("#datatablesSimple")) {
-    $("#datatablesSimple").DataTable().clear().destroy();
+  if ($.fn.dataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable().clear().destroy();
   }
 
   tbody.innerHTML = "";

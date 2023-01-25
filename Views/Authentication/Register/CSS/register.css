@@ -1,9 +1,9 @@
 :root {
-  --blue: #4081B3;
+  --blue: #4081b3;
   --indigo: #2c4964;
-  --gold: #FEC644;
+  --gold: #fec644;
   --gray: #f1f7fd;
-  --aqua: #44A8CB;
+  --aqua: #44a8cb;
   --light-teal: #59d0d033;
   --color-light: #e5e7eb;
 }
@@ -15,16 +15,17 @@
   border: 2px solid var(--color-light);
   border-radius: 10px;
 }
-.register .register-form h2{
+.register .register-form h2 {
   margin-bottom: 50px;
   font-weight: 700;
   color: var(--blue);
 }
-.register .register-form label{
+.register .register-form label {
   color: var(--blue);
 }
 
-.register .register-form input {
+.register .register-form input,
+add-input {
   height: 50px;
   border: 2px solid var(--color-light);
   border-radius: 10px;

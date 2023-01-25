@@ -34,9 +34,9 @@ export class User {
     let currentDate = new Date();
     let dateNow =
       currentDate.getMonth() +
-      1 +'/'
+      1 +
+      "/" +
       currentDate.getDate() +
-      
       "/" +
       currentDate.getFullYear();
     fetch("http://localhost:3000/pending", {

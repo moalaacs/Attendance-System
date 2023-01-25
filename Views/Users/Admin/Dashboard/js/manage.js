@@ -1,43 +1,36 @@
-let allEmp;
-let allPend;
+let allEmployees;
+let allPending;
 
 let tbody = document.querySelector("#table_body");
 let thead = document.querySelector("#table_headers");
-let btn_addEmp = document.querySelectorAll(".btn_manage")[0];
-let btn_getemp_delete = document.querySelectorAll(".btn_manage")[1];
-let btn_getPending = document.querySelectorAll(".btn_manage")[2];
-let myform = document.querySelector("#register-form");
+let addBtn = document.querySelector(".add-btn");
+let deleteBtn = document.querySelector(".delete-btn");
+let pendingBtn = document.querySelector(".pending-btn");
+let form = document.querySelector("#register-form");
 
-let getallemp = async () => {
+let getAllEmployees = async () => {
   let data = await fetch("http://localhost:3000/employees");
   let users = await data.json();
-
-  allEmp = users;
+  allEmployees = users;
 };
 
 let getallPending = async () => {
   let data = await fetch("http://localhost:3000/pending");
   let users = await data.json();
-  allPend = users;
+  allPending = users;
 };
 
 window.addEventListener("load", async (e) => {
-  await getallemp();
-
-  btn_getemp_delete.addEventListener("click", deleteFunction);
-
-  // get daily report
-  btn_getPending.addEventListener("click", checkPending);
-  {
-  }
-
-  btn_addEmp.addEventListener("click", addNewEmp);
+  await getAllEmployees();
+  deleteBtn.addEventListener("click", deleteFunction);
+  pendingBtn.addEventListener("click", checkPending);
+  addBtn.addEventListener("click", addNewEmp);
 });
 
 function deleteFunction() {
-  myform.style.display = "none";
-  if ($.fn.dataTable.isDataTable("#datatablesSimple"))
-    $("#datatablesSimple").DataTable().clear().destroy();
+  form.style.display = "none";
+  if ($.fn.dataTable.isDataTable("#datatable"))
+    $("#datatable").DataTable().clear().destroy();
 
   tbody.innerHTML = "";
   let headers =
@@ -47,18 +40,18 @@ function deleteFunction() {
 }
 
 function DeleteEmp() {
-  allEmp.forEach((user) => {
+  allEmployees.forEach((user) => {
     let tr = document.createElement("tr");
     let firstName = document.createElement("td");
     let lastName = document.createElement("td");
     let email = document.createElement("td");
     let role = document.createElement("td");
     let deleteTd = document.createElement("td");
-    let spanid = document.createElement("span");
+    let span = document.createElement("span");
     deleteTd.innerHTML = "<i class='fa-solid fa-trash text-danger fs-3'></i>";
-    spanid.innerText = user.id;
-    spanid.style.visibility = "hidden";
-    deleteTd.appendChild(spanid);
+    span.innerText = user.id;
+    span.style.visibility = "hidden";
+    deleteTd.appendChild(span);
     role.innerText = user.position;
 
     firstName.innerText = user.firstName;
@@ -74,41 +67,40 @@ function DeleteEmp() {
     tbody.appendChild(tr);
 
     deleteTd.addEventListener("click", (event) => {
-      //  let targetEmpMail=event.target.parentElement.parentNode.parentElement.children[1].innerText;
-      let emp_id = event.target.nextSibling.innerHTML;
-      console.log(emp_id);
+      let empID = event.target.nextSibling.innerHTML;
+      console.log(empID);
 
-      if (window.confirm("you will delete this employee permenant")) {
-        fetch("http://localhost:3000/employees/" + emp_id, {
-          method: "DELETE", // Method itself
+      if (window.confirm("Are you sure?")) {
+        fetch("http://localhost:3000/employees/" + empID, {
+          method: "DELETE",
           headers: {
-            "Content-type": "application/json; charset=UTF-8", // Indicates the content
+            "Content-type": "application/json; charset=UTF-8",
           },
         })
           .then((res) => {
             return res.json();
           })
           .then((data) => {
-            alert("emp has deleted");
+            alert("This employee has been deleted");
           });
       }
     });
   });
-  $("#datatablesSimple").DataTable();
+  $("#datatable").DataTable();
 }
 
 function addNewEmp() {
-  if ($.fn.dataTable.isDataTable("#datatablesSimple")) {
-    $("#datatablesSimple").DataTable().clear().destroy();
+  if ($.fn.dataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable().clear().destroy();
   }
   thead.innerHTML = "";
-  myform.style.display = "block";
+  form.style.display = "block";
 }
 
 async function checkPending() {
-  myform.style.display = "none";
-  if ($.fn.dataTable.isDataTable("#datatablesSimple")) {
-    $("#datatablesSimple").DataTable().clear().destroy();
+  form.style.display = "none";
+  if ($.fn.dataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable().clear().destroy();
   }
 
   await getallPending();
@@ -118,7 +110,7 @@ async function checkPending() {
     "<tr><td>First Name</td><td>Late Name</td><td>Email</td><td>Role</td><td>Confirm</td><td>Delete</td></tr>";
   thead.innerHTML = headers;
 
-  allPend.forEach((user) => {
+  allPending.forEach((user) => {
     let tr = document.createElement("tr");
     let firstName = document.createElement("td");
     let lastName = document.createElement("td");
@@ -154,24 +146,29 @@ async function checkPending() {
     tbody.appendChild(tr);
 
     deleteTd.addEventListener("click", async (e) => {
-      if (window.confirm("you will delete this acount")) {
-        let emp_id = e.target.nextSibling.innerHTML;
-        await deletebyId(emp_id);
+      if (window.confirm("This employee will be deleted")) {
+        let empID = e.target.nextSibling.innerHTML;
+        await deleteEmp(empID);
       }
     });
 
     confirm.addEventListener("click", (e) => {
-      if (window.confirm("you will add this acount")) {
-        let emp_id = e.target.nextSibling.innerHTML;
-        let confirmed_emp = allPend.filter((emp) => {
-          return emp.id == emp_id;
+      if (window.confirm("This employee will be added")) {
+        let empID = e.target.nextSibling.innerHTML;
+        let confirmed_emp = allPending.filter((emp) => {
+          return emp.id == empID;
         });
         let employee = confirmed_emp[0];
         let selectedRole = document.querySelector(".form-select").value;
 
         let currentDate = new Date();
-        let dateNow = currentDate.getMonth() + 1 + "/";
-        currentDate.getDate() + "/" + currentDate.getFullYear();
+        let dateNow =
+          currentDate.getMonth() +
+          1 +
+          "/" +
+          currentDate.getDate() +
+          "/" +
+          currentDate.getFullYear();
 
         fetch("http://localhost:3000/employees", {
           method: "POST",
@@ -190,17 +187,23 @@ async function checkPending() {
             "Content-type": "application/json; charset=UTF-8",
           },
         }).then((e) => {
-          deletebyId(emp_id);
+          deleteEmp(empID);
+          Email.send({
+            SecureToken: "e498i9de-2pl9-4qe7-c181-783p34c871b5",
+            To: `${data[i].email}`,
+            From: "moalaa@gmail.com",
+            Subject: "Congrats",
+            Body: `Your username is ${data[i].username} and your password is ${data[i].password}`,
+          }).then((message) => alert(message));
         });
       }
     });
   });
-
-  $("#datatablesSimple").DataTable();
+  $("#datatable").DataTable();
 }
 
-function deletebyId(emp_id) {
-  fetch("http://localhost:3000/pending/" + emp_id, {
+function deleteEmp(empID) {
+  fetch("http://localhost:3000/pending/" + empID, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -209,7 +212,5 @@ function deletebyId(emp_id) {
     .then((res) => {
       return res.json();
     })
-    .then((data) => {
-      alert("account has deleted ");
-    });
+    .then((data) => {});
 }

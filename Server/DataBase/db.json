@@ -12,9 +12,9 @@
       "role": "security",
       "attend": [
         {
-          "date": "1/20/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
+          "in": "8:30",
           "late": "0:0",
           "out": "15:00"
         }
@@ -31,22 +31,11 @@
       "role": "admin",
       "attend": [
         {
-          "date": "20/01/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
-          "late": "0:5",
+          "in": "8:30",
+          "late": "0:0",
           "out": "15:00"
-        },
-        {
-          "date": "21/01/2023",
-          "absence": false,
-          "in": "8:25",
-          "late": "0:5",
-          "out": "15:00"
-        },
-        {
-          "date": "22/01/2023",
-          "absence": true
         }
       ]
     },
@@ -56,22 +45,22 @@
       "lastName": "Ali",
       "address": "Mansoura",
       "email": "khaled@gamil.com",
-      "password": "LdafV!dYEf^NXk9Z#",
+      "password": "Password123",
       "dob": "01/15/2000",
       "role": "employee",
       "attend": [
         {
-          "date": "21/01/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
-          "late": "0:5",
+          "in": "9:00",
+          "late": "0:30",
           "out": "15:00"
         },
         {
-          "date": "22/01/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
-          "late": "0:0",
+          "in": "9:00",
+          "late": "0:30",
           "out": "15:00"
         }
       ]
@@ -87,18 +76,18 @@
       "role": "employee",
       "attend": [
         {
-          "date": "1/22/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
-          "late": "0:0",
+          "in": "8:45",
+          "late": "0:15",
           "out": "15:00"
         },
         {
-          "date": "1/23/2023",
+          "date": "1/25/2023",
           "absence": false,
-          "in": "8:25",
-          "late": "0:0",
-          "out": "15:00"
+          "in": "8:40",
+          "late": "0:10",
+          "out": "13:00"
         }
       ]
     },
@@ -113,22 +102,37 @@
       "role": "employee",
       "attend": [
         {
-          "date": "1/25/2023"
+          "date": "1/24/2023",
+          "absence": false,
+          "in": "8:30",
+          "late": "0:0",
+          "out": "12:00"
+        },
+        {
+          "date": "1/25/2023",
+          "absence": true,
+          "in": "8:35",
+          "late": "0:5",
+          "out": "15:00"
         }
       ]
     },
     {
       "id": 6,
-      "firstName": "f",
-      "lastName": "fff",
-      "address": "fffffff",
-      "email": "f@f.com",
-      "password": "7wb%35*i7&sH5*%V",
+      "firstName": "Fatma",
+      "lastName": "Ahmed",
+      "address": "Mansoura",
+      "email": "fatma@fa.com",
+      "password": "Password123",
       "dob": "01/09/2023",
       "role": "security",
       "attend": [
         {
-          "date": "1/26/2023"
+          "date": "1/25/2023",
+          "absence": false,
+          "in": "8:35",
+          "late": "0:5",
+          "out": "15:00"
         }
       ]
     }
@@ -140,16 +144,12 @@
       "lastName": "Emad",
       "address": "Mansoura",
       "email": "zoee1ff@meo.com",
-      "password": "hkF3H!j9yf&RAWj2",
+      "password": "Password123",
       "dob": "01/09/2023",
       "role": "employee",
       "attend": [
         {
-          "date": "24/01/2023",
-          "absence": false,
-          "in": "8:25",
-          "late": "0:0",
-          "out": "15:00"
+          "date": "1/25/2023"
         }
       ]
     },
@@ -159,50 +159,42 @@
       "lastName": "Alaa",
       "address": "teaijfa",
       "email": "hambola3@gmail.com",
-      "password": "hambola",
+      "password": "Password123",
       "dob": "01/08/2023",
       "role": "employee",
       "attend": [
         {
-          "date": "24/01/2023",
-          "absence": false,
-          "in": "8:25",
-          "late": "0:0",
-          "out": "15:00"
+          "date": "1/25/2023"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "firstName": "Test",
+      "lastName": "Hambola",
+      "address": "Mansoura",
+      "email": "test@gmail.com",
+      "password": "Uy*k,i0rr",
+      "dob": "01/08/2023",
+      "role": "employee",
+      "attend": [
+        {
+          "date": "1/25/2023"
         }
       ]
     },
     {
       "id": 8,
-      "firstName": "Hambola",
-      "lastName": "Alaa",
-      "address": "fff",
-      "email": "hambola1@gmail.com",
-      "password": "Ec$4cN$MMb2kmpgv",
-      "dob": "01/07/2023",
-      "role": "employee",
+      "firstName": "Add",
+      "lastName": "Add",
+      "address": "Cairo",
+      "email": "add@mail.com",
+      "password": "add*uyt54555TY",
+      "dob": "01/01/2023",
+      "role": "Admin",
       "attend": [
         {
-          "date": "24/01/2023",
-          "absence": false,
-          "in": "8:25",
-          "late": "0:0",
-          "out": "15:00"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "firstName": "Hamsola",
-      "lastName": "Hamsola",
-      "address": "MitGhamr",
-      "email": "Hamsola@gmail.com",
-      "password": "vhaJ$c5&4zGkb#aN",
-      "dob": "01/02/2023",
-      "role": "employee",
-      "attend": [
-        {
-          "date": "24/01/2023"
+          "date": "1/25/2023"
         }
       ]
     }
